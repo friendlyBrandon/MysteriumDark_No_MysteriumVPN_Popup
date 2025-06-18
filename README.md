@@ -1,3 +1,4 @@
+(Official Github Repository of MysteriumDark: https://github.com/mysteriumnetwork/mysterium-vpn-desktop )
 I edited the Official version to stop showing the MysteriumVPN popup ads as they always appear while doing anything in MysteriumDark.
 
 Enjoy! 
