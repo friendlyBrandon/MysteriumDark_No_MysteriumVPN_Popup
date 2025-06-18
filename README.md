@@ -1,6 +1,7 @@
 (Official Github Repository of MysteriumDark: https://github.com/mysteriumnetwork/mysterium-vpn-desktop )
 I edited the Official version to stop showing the MysteriumVPN popup ads as they always appear while doing anything in MysteriumDark.
 
+
 Enjoy! 
 (in the screenshot under this text you can see what I permanently removed with this release)
 ![image](https://github.com/user-attachments/assets/57ef0ffc-239b-49a6-b198-2562eebbc3cb)
@@ -21,6 +22,7 @@ Please run that same command but in CMD.
 
 3. Build the app
 `npm run build`
+
 
 That's it! Enjoy!
 
