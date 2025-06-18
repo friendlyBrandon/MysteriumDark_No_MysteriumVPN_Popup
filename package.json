@@ -1,0 +1,203 @@
+{
+  "name": "mysterium-vpn-desktop",
+  "productName": "MysteriumDark",
+  "description": "Desktop VPN client (legacy) for Mysterium Network",
+  "version": "0.0.0-snapshot",
+  "main": "index.js",
+  "author": {
+    "name": "Mysterium Network",
+    "email": "mysterium-dev@mysterium.network",
+    "url": "https://mysterium.network/"
+  },
+  "license": "MIT",
+  "scripts": {
+    "dev": "electron-webpack dev",
+    "lint": "eslint src",
+    "clean": "shx rm -rf dist",
+    "build": "electron-webpack",
+    "bundle": "yarn build && electron-builder",
+    "bundle-dev": "yarn build && CSC_IDENTITY_AUTO_DISCOVERY=false electron-builder",
+    "dist": "electron-builder"
+  },
+  "engines": {
+    "node": ">=16"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.35",
+    "@fortawesome/free-brands-svg-icons": "^5.15.3",
+    "@fortawesome/free-solid-svg-icons": "^5.15.3",
+    "@fortawesome/react-fontawesome": "^0.1.14",
+    "@mysteriumnetwork/node": "1.29.2",
+    "@mysteriumnetwork/terms": "0.0.50",
+    "@sentry/electron": "^4.0.0",
+    "@use-it/interval": "^1.0.0",
+    "async-retry": "^1.3.3",
+    "bignumber.js": "^9.0.2",
+    "byte-size": "^8.0.0",
+    "electron-log": "^4.4.8",
+    "electron-updater": "^5.2.1",
+    "history": "^5.3.0",
+    "lodash": "^4.17.21",
+    "mkdirp": "^1.0.4",
+    "mobx": "^6.6.0",
+    "mobx-logger": "^0.7.1",
+    "mobx-react-lite": "^3.3.0",
+    "mysterium-vpn-js": "^28.0.0",
+    "node-machine-id": "^1.1.12",
+    "open": "^7.0.0",
+    "qrcode.react": "^2.0.0",
+    "react": "^18.2.0",
+    "react-autosuggest": "^10.1.0",
+    "react-circle-flags": "^0.0.17",
+    "react-countdown": "^2.3.2",
+    "react-dom": "^18.2.0",
+    "react-hook-form": "^7.31.1",
+    "react-hot-toast": "^2.2.0",
+    "react-is": "^18.2.0",
+    "react-lottie-player": "^1.4.3",
+    "react-markdown": "^6.0.2",
+    "react-router-dom": "^6.3.0",
+    "react-table": "^7.7.0",
+    "react-tooltip": "^4.2.21",
+    "react-virtualized-auto-sizer": "^1.0.6",
+    "react-window": "^1.8.7",
+    "semver": "^7.5.2",
+    "source-map-support": "^0.5.21",
+    "styled-components": "5.3.0",
+    "sudo-prompt": "^9.2.1"
+  },
+  "devDependencies": {
+    "@electron/notarize": "^2.2.0",
+    "@sentry/cli": "^2.5.2",
+    "@types/async-retry": "^1.4.3",
+    "@types/electron-devtools-installer": "^2.2.2",
+    "@types/lodash": "^4.14.179",
+    "@types/node": "^16.0.0",
+    "@types/qrcode.react": "^1.0.2",
+    "@types/react": "^18.0.14",
+    "@types/react-autosuggest": "^10.1.5",
+    "@types/react-dom": "^18.0.5",
+    "@types/react-table": "^7.7.12",
+    "@types/react-virtualized-auto-sizer": "^1.0.1",
+    "@types/react-window": "^1.8.5",
+    "@types/semver": "^7.3.9",
+    "@types/styled-components": "^5.1.24",
+    "@types/webpack-env": "^1.16.3",
+    "@typescript-eslint/eslint-plugin": "^5.23.0",
+    "@typescript-eslint/parser": "^5.23.0",
+    "chmodr": "^1.2.0",
+    "cross-env": "^7.0.3",
+    "electron": "^20.1.2",
+    "electron-builder": "^23.3.3",
+    "electron-devtools-installer": "^3.2.0",
+    "electron-download": "^4.1.1",
+    "electron-webpack": "^2.8.2",
+    "electron-webpack-ts": "^4.0.1",
+    "eslint": "^8.23.1",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-header": "^3.1.1",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.31.8",
+    "glob": "^7.2.0",
+    "prettier": "^2.7.1",
+    "shx": "^0.3.3",
+    "typescript": "^4.6.4",
+    "url-loader": "^4.1.0",
+    "webpack": "^4.46.0"
+  },
+  "resolutions": {
+    "@types/react": "^18.0.14"
+  },
+  "analyticsUrl": "https://analytics.mysterium.network",
+  "intercomAppId": "sjkeehf4",
+  "sentryDsn": "https://5c3208e8d6124f2db303a2d12c7f48b8@o136129.ingest.sentry.io/5222592",
+  "electronWebpack": {
+    "renderer": {
+      "sourceDirectory": "src/app",
+      "template": "src/app/index.html",
+      "webpackConfig": "webpack.renderer.additions.js"
+    },
+    "main": {
+      "webpackConfig": "webpack.main.additions.js"
+    }
+  },
+  "build": {
+    "appId": "network.mysterium.mysterium-vpn-desktop",
+    "directories": {
+      "buildResources": "build",
+      "output": "dist"
+    },
+    "files": [
+      "!**/node_modules/@mysteriumnetwork/node/bin/**",
+      "**/node_modules/@mysteriumnetwork/node/bin/${os}/${arch}/**"
+    ],
+    "mac": {
+      "target": {
+        "target": "default",
+        "arch": "universal"
+      },
+      "singleArchFiles": "**/node_modules/@mysteriumnetwork/node/bin/**",
+      "icon": "static/logo.icns",
+      "hardenedRuntime": true,
+      "entitlements": "build/entitlements.mac.plist",
+      "entitlementsInherit": "build/entitlements.mac.plist",
+      "category": "public.app-category.productivity"
+    },
+    "dmg": {
+      "background": "build/background.tiff",
+      "iconTextSize": 14
+    },
+    "win": {
+      "target": [
+        "nsis"
+      ],
+      "icon": "static/logo.icns"
+    },
+    "linux": {
+      "target": [
+        "deb",
+        "rpm"
+      ],
+      "icon": "static/logo.icns",
+      "category": "Network"
+    },
+    "deb": {
+      "depends": [
+        "resolvconf",
+        "libgtk-3-0",
+        "libnotify4",
+        "libnss3",
+        "libxss1",
+        "libxtst6",
+        "xdg-utils",
+        "libatspi2.0-0",
+        "libuuid1",
+        "libappindicator3-1",
+        "libsecret-1-0"
+      ]
+    },
+    "rpm": {
+      "depends": [
+        "resolvconf",
+        "at-spi2-core",
+        "gtk3",
+        "libXScrnSaver",
+        "libXtst",
+        "libnotify",
+        "libuuid",
+        "nss",
+        "xdg-utils"
+      ]
+    },
+    "nsis": {
+      "oneClick": true,
+      "perMachine": true,
+      "allowElevation": true,
+      "runAfterFinish": true,
+      "include": "build/nsis/customize.nsi"
+    },
+    "afterPack": "ci/afterPack.js",
+    "afterSign": "ci/notarize.js"
+  }
+}
