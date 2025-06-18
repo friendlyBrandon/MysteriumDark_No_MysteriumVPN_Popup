@@ -7,18 +7,19 @@ Enjoy!
 
 To build it yourself from the source code, here are the commands:
 
-Install and build the project
-yarn && yarn build
+1. Install and build the project
+`yarn && yarn build`
 
-Install Electron Builder (if not already installed)
-npm install --save-dev electron-builder
+2. Install Electron Builder (if not already installed)
+`npm install --save-dev electron-builder`
 
-IF you get the following error: File C:\Program Files\nodejs\npm.ps1 cannot be loaded because running scripts is disabled on this system.
+IF you get the following error: 
+`File C:\Program Files\nodejs\npm.ps1 cannot be loaded because running scripts is disabled on this system.`
 
 Please run that same command but in CMD.
 
-Build the app
-npm run build
+3. Build the app
+`npm run build`
 
 That's it! Enjoy!
 
